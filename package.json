@@ -1,0 +1,59 @@
+{
+  "name": "praise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:start": "webpack-dev-server --config webpack.config.dev.js --hot --inline",
+    "test": "webpack && gulp && node build/src/app_koa.js",
+    "build": "webpack && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conan2008/praise.git"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.2",
+    "express": "^4.16.2",
+    "karma": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "koa": "^2.4.1"
+  },
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "co": "^4.6.0",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-swig": "^0.8.0",
+    "gulp-watch": "^5.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jasmine": "^2.9.0",
+    "jasmine-core": "^2.9.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-simple-router": "^0.2.0",
+    "koa-static": "^4.0.2",
+    "koa-swig": "^2.2.1",
+    "mocha": "^5.0.0",
+    "phantomjs": "^2.1.7+deprecated",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "style-loader": "^0.20.1",
+    "supertest": "^3.0.0",
+    "swig": "^1.4.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "author": "yuanlaoban",
+  "license": "ISC"
+}

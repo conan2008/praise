@@ -1,0 +1,110 @@
+.arm,
+.hand,
+.thumb,
+.fig {
+    background-color: currentColor;
+}
+
+.fig-linear {
+    background: -webkit-linear-gradient(left, currentColor, white);
+}
+
+.thumb-top-linear {
+    background: -webkit-linear-gradient(bottom, currentColor, white);
+}
+
+.thumb-bottom-linear {
+    background: -webkit-linear-gradient(top, burlywood, currentColor);
+}
+
+.praise {
+    position: relative;
+    margin-left: 400px;
+    top: 150px;
+    width: 300px;
+    color: bisque;
+}
+
+.arm {
+    width: 110px;
+    height: 130px;
+    position: absolute;
+    top: 120px;
+    border-top: 1px solid black;
+    z-index: 3;
+}
+
+.hand {
+    width: 140px;
+    height: 206px;
+    position: absolute;
+    left: 100px;
+    top: 80px;
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-sizing: border-box;
+}
+
+.thumb {
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    left: 130px;
+    top: 0;
+    transform: skew(-20deg);
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 25px;
+}
+
+.fig {
+    border: none;
+    box-shadow: 1px 0 0 1px black;
+    width: 40px;
+    height: 51px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.figs {
+    position: absolute;
+    top: 0px;
+    left: 130px;
+}
+
+.thumb-top {
+    width: 50px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 25px;
+}
+
+.thumb-bottom {
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 25px;
+}
+
+@keyframes praise1 {
+    from {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+}
+.praise-animation {
+    display: none;
+    position: relative;
+    font-size: 20px;
+    color: red;
+    text-shadow: 0 0 2px gray;
+    text-align: right;
+    animation: praise1 1s linear; 
+}
