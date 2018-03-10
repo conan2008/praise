@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:start": "webpack-dev-server --config webpack.config.dev.js --hot --inline",
-    "test": "webpack && gulp && node build/src/app_koa.js",
+    "test": "webpack && gulp",
     "build": "webpack && gulp"
   },
   "repository": {
