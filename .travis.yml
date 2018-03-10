@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '8.9.4'
 after_script:
-- scp -r StrictHostKeyChecking=no /home/travis/build/conan2008/praise 118.190.158.102:/root/app/praise
+- scp -r StrictHostKeyChecking=no ./build 118.190.158.102:/root/app/praise
 before_install:
 - openssl aes-256-cbc -K $encrypted_d9df02b07c62_key -iv $encrypted_d9df02b07c62_iv
   -in zhangyuan_key.enc -out ~/.ssh/zhangyuan_key -d
