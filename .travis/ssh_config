@@ -1,0 +1,8 @@
+Host 118.190.158.102
+User root
+IdentityFile ~/.ssh/zhangyuan_key
+Protocol 2
+Compression yes
+ServerAliveInterval 60
+ServerAliveCountMax 20
+LogLevel INFO
