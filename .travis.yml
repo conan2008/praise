@@ -3,6 +3,7 @@ node_js:
 - '8.9.4'
 after_script:
 - echo "-after  start-----------------------------------"
+- npm run build
 - scp -r -o StrictHostKeyChecking=no ./build 118.190.158.102:/root/app/praise
 before_install:
 - echo "-start-----------------------------------"
