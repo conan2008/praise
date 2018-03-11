@@ -1,3 +1,3 @@
 var add = function(num) {
-    return ++num;
+    return num + 2;
 }
