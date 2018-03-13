@@ -17,7 +17,7 @@ module.exports = function(templateParams, cssList) {
         console.log('调试_regChunk:', _regChunk);
         console.log('调试_regChunk[i]:', _regChunk[1]);
         // _scripts += "<script type='text/javascript'  src='" + _files.chunks[_regChunk[i]]['entry'] + "'></script>";
-        _scripts += "<script type='text/javascript'  src='" + _regChunk[i] + "'></script>";
+        _scripts += "<script type='text/javascript'  src='../" + _regChunk[i] + "'></script>";
     }
     for (var k = 0; k < _regCss.length; k++) {
         var _cssitem = _regCss[k],
@@ -27,7 +27,7 @@ module.exports = function(templateParams, cssList) {
             var _filearr = filename.split('/'),
                 filrdata = _filearr[_filearr.length - 1];
             if (_cssitems.test(filrdata) && _cssiteme.test(filrdata)) {
-                _styles += '<link rel="stylesheet" type="text/css" href="' + filename + '"/>';
+                _styles += '<link rel="stylesheet" type="text/css" href="../' + filename + '"/>';
             }
         });
     }

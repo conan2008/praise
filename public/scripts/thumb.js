@@ -1,47 +1,45 @@
-import _ from './lib';
-import add from './util';
+import {
+    Thumb
+} from './praise';
+import '../styles/praise.css';
 
-class PraiseButton {
-    constructor(element, count) {
-        this.element = element;
-        this.count = count;
-    }
+xtag.register("x-arm", {
+    content: `<div class="arm"></div>`
+});
 
-    bindClick() {
-        this.element.onclick = _.thorttel(this.addOne,1000);
-    }
+xtag.register("x-hand", {
+    content: `<div class="hand">
+                <div class="figs">
+                    <div class="fig fig-linear"></div>
+                    <div class="fig fig-linear"></div>
+                    <div class="fig fig-linear"></div>
+                    <div class="fig fig-linear"></div>
+                </div>
+            </div>`
+});
 
-    addOne() {
-        $("#praise-animation").addClass("praise-animation");
-        if (this.count < 10) {
-            $(".praise").css("-webkit-filter", "grayscale(0%)");
-            this.count = add(this.count);
-        } else {
-            $(".praise").css("-webkit-filter", "grayscale(100%)");
-            this.count = 0;
-        }
-
-        axios.post('/praise/add', {
-                addId: 1,
-                praiseNum: this.count
-            })
-            .then((response) => {
-                console.log(this.count);
-            })
-            .catch((error) => {
-                console.log(error);
+xtag.register('x-thumb', {
+    content: `<div class="praise">
+                <div id="praise-animation">+1</div>
+                <x-arm></x-arm>
+                <x-hand></x-hand>
+                <div class="thumb">
+                    <div class="thumb-top thumb-top-linear"></div>
+                    <div class="thumb-bottom thumb-bottom-linear"></div>
+                </div>
+             </div>`,
+    lifecycle: {
+        created: function () {
+            $.extend({
+                thumb: Thumb
             });
+            this.callBack();
+        }
+    },
+    methods: {
+        callBack: function () {
+            const thumb = new $.thumb(this, 0);
+            thumb.bindClick();
+        }
     }
-
-}
-
-class Thumb extends PraiseButton {
-
-    constructor(element, count) {
-        super(element, count)
-    }
-
-}
-
-
-export default Thumb
+});

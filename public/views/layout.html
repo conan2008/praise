@@ -9,20 +9,29 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="dns-prefetch" href="//cdn.bootcss.com">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css" rel="stylesheet" /> {% block styles %}{% endblock %}
 
-    {% block styles %}{% endblock %}
-
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
     <script src="https://cdn.bootcss.com/systemjs/0.20.19/system.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+    <a href="/index/thumb">link to thumb</a>
+    <a href="/index/star">link to star</a>
+
+    <div id="pjaxContent">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <script type="text/javascript">
+        $(document).pjax('a', '#pjaxContent');
+    </script>
 </body>
-    {% block scripts %}{% endblock %}
+{% block scripts %}{% endblock %}
+
 </html>
