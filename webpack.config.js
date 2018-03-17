@@ -23,12 +23,20 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [{
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true //css压缩
-                        }
-                    }],
+                    use:[
+                            {
+                                loader: 'css-loader',
+                                options: { 
+                                    // minimize: true //css压缩 
+                                }
+                            },
+                            { 
+                                loader: 'postcss-loader', 
+                                options: { 
+                                    sourceMap: true 
+                                } 
+                            }
+                        ]
                 })
             }]
         },
